@@ -1,36 +1,19 @@
 var React = require("react");
 var reactDom = require("react-dom");
+import {Route, IndexRoute, BrowserRouter as Router} from "react-router-dom"
+import Layout from "./layout.jsx"
 
 class App extends React.Component{
   constructor(props){
     super(props);
-
-    this.state = {
-      counter: 0,
-      text: ""
-    }
-
-    this.handleClick = this.handleClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
-handleClick(event){
-  this.setState({counter:this.state.counter+1})
-}
-
-handleChange(event){
-  const value = event.target.value;
-  this.setState({text:value});
-}
 
   render(){
     return(
-      <div>
-        <p>{this.state.counter}</p>
-        <button onClick={this.handleClick}>Count</button>
-        <hr/>
-        <p>Text: {this.state.text}</p>
-        <input type="text" value={this.state.text} onChange={this.handleChange}/>
-      </div>
+      //Router JSX comes here
+      <Router>
+        <Route path="/" component={Layout} />
+      </Router>
     )
   }
 }
