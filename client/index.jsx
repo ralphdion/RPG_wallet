@@ -26,6 +26,7 @@ class App extends React.Component{
     )
   }
 }
+
 reactDom.render(
   <App/>
   , document.getElementById("content"))

@@ -1,3 +1,20 @@
 body {
   background-color: #FFFFFF;
 }
+nav ul{
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+}
+ nav ul li{
+   display: inline;
+   margin: 1em;
+   float: right;
+ }
+ nav ul li a{
+   display: block;
+   
+ }
+
+ nav ul li a:hover{
+   background-color: white;
+ }

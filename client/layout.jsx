@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
 class Layout extends React.Component{
   constructor(props){
@@ -10,7 +11,7 @@ class Layout extends React.Component{
       <div>
         <nav>
           <ul>
-            <li>Login</li>
+            <li><Link to="/login">Login</Link></li>
             <li>Sign up</li>
           </ul>
         </nav>
