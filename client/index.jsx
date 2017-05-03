@@ -2,6 +2,8 @@ var React = require("react");
 var reactDom = require("react-dom");
 import {Route, IndexRoute, BrowserRouter as Router} from "react-router-dom"
 import Layout from "./layout.jsx"
+import Dashboard from "./route_components/dashboard.jsx"
+import Login from "./route_components/login.jsx"
 
 class App extends React.Component{
   constructor(props){
@@ -12,7 +14,14 @@ class App extends React.Component{
     return(
       //Router JSX comes here
       <Router>
-        <Route path="/" component={Layout} />
+        <Route render={(props)=>{
+          return(
+              <Layout history={props.history}>
+                <Route exact path="/" component={Dashboard}/>
+                <Route path="/login" component={Login}/>
+              </Layout>
+          )
+        }} />
       </Router>
     )
   }
